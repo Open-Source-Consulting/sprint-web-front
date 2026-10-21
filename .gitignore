@@ -1,10 +1,3 @@
-
-# ==========================================================
-# .gitignore do REPOSITÓRIO DE ENTREGA (para o professor)
-# Para usar: apague tudo acima e tire o "# " do começo das linhas abaixo.
-# Ele deixa de fora docs/, .impeccable/ e PRODUCT.md, que são só da equipe.
-# ==========================================================
-
 # Dependências e build
 node_modules
 dist
