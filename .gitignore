@@ -1,9 +1,11 @@
+
 # ==========================================================
-# .gitignore do REPOSITÓRIO PROVISÓRIO (da equipe)
-# Aqui vai tudo do projeto, inclusive docs/, .impeccable/ e PRODUCT.md.
+# .gitignore do REPOSITÓRIO DE ENTREGA (para o professor)
+# Para usar: apague tudo acima e tire o "# " do começo das linhas abaixo.
+# Ele deixa de fora docs/, .impeccable/ e PRODUCT.md, que são só da equipe.
 # ==========================================================
 
-# Dependências e build (são gerados pelo npm install e pelo npm run build)
+# Dependências e build
 node_modules
 dist
 dist-ssr
@@ -26,45 +28,9 @@ Thumbs.db
 # Vercel
 .vercel
 
-# Arquivos temporários do Impeccable (capturas e revisões de cada computador)
-.impeccable/review
-.impeccable/mocks
-.impeccable/build
-.impeccable/config.local.json
+# Material de apoio da equipe
+docs/
 
-
-# ==========================================================
-# .gitignore do REPOSITÓRIO DE ENTREGA (para o professor)
-# Para usar: apague tudo acima e tire o "# " do começo das linhas abaixo.
-# Ele deixa de fora docs/, .impeccable/ e PRODUCT.md, que são só da equipe.
-# ==========================================================
-
-# # Dependências e build
-# node_modules
-# dist
-# dist-ssr
-# *.local
-#
-# # Variáveis de ambiente locais (o .env.example é versionado)
-# .env
-# .env.*
-# !.env.example
-#
-# # Logs e editores
-# npm-debug.log*
-# *.log
-# .vscode/*
-# !.vscode/extensions.json
-# .idea
-# .DS_Store
-# Thumbs.db
-#
-# # Vercel
-# .vercel
-#
-# # Material de apoio da equipe
-# docs/
-#
-# # Arquivos da ferramenta de design (Impeccable)
-# .impeccable/
-# PRODUCT.md
+# Arquivos da ferramenta de design (Impeccable)
+.impeccable/
+PRODUCT.md
