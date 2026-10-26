@@ -6,8 +6,8 @@ Projeto acadêmico da equipe Open Source Consulting para o Challenge JOVI (FIAP,
 
 ## Links
 
-- Deploy na Vercel: _(adicionar o link)_
-- Repositório Git: _(adicionar o link)_
+- Deploy na Vercel: https://sprint-web-front-delta.vercel.app/
+- Repositório Git: https://github.com/Open-Source-Consulting/sprint-web-front
 
 ## Funcionalidades
 
@@ -117,4 +117,4 @@ scripts/        seed da API e teste dos dados do seed
 
 ## Equipe
 
-Open Source Consulting. Os nomes completos e os RMs estão em [INTEGRANTES.TXT](INTEGRANTES.TXT).
+Open Source Consulting. Os nomes completos e os RMs estão em [INTEGRANTES.txt](INTEGRANTES.txt).
