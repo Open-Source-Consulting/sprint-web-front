@@ -1,0 +1,243 @@
+@import 'tailwindcss';
+
+/* As fontes são importadas no src/main.jsx (pacotes do @fontsource).
+   Archivo nos títulos e Atkinson Hyperlegible Next no texto. */
+
+@theme {
+  --font-sans: 'Atkinson Hyperlegible Next Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-titulo: 'Archivo Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+
+  /* Cores das partes claras */
+  --color-papel: #f7f7f5;
+  --color-papel-alt: #efefec;
+  --color-carta: #ffffff;
+  --color-tinta: #101418;
+  --color-tinta-media: #3d4750;
+  --color-tinta-suave: #5a6570;
+  --color-linha: #e0e0db;
+  --color-linha-forte: #cfcfc9;
+  /* Borda dos campos mais escura, para ter contraste de pelo menos 3:1 com o fundo. */
+  --color-borda-campo: #85857f;
+  --color-borda-campo-hover: #6b6b66;
+
+  /* Cores das partes escuras */
+  --color-noite: #0b0e12;
+  --color-noite-alt: #141a20;
+  --color-noite-elev: #1a222a;
+  --color-noite-borda: #27313a;
+  --color-sobre-noite: #f2f4f6;
+  --color-sobre-noite-media: #b4bdc6;
+  --color-sobre-noite-suave: #98a2ad;
+  --color-sobre-noite-fraca: #7c8894;
+  --color-linha-noite: rgb(255 255 255 / 0.1);
+
+  /* Cor de destaque (ciano) */
+  --color-acento: #0e7c86;
+  --color-acento-forte: #0a5e66;
+  --color-acento-texto: #0c6e77;
+  --color-acento-claro: #22d3ee;
+  --color-acento-suave: #e3f3f4;
+
+  /* Cores de erro e de aviso */
+  --color-perigo: #b42318;
+  --color-perigo-forte: #912018;
+  --color-perigo-suave: #fef3f2;
+  --color-perigo-claro: #fda29b;
+  --color-aviso: #8a5a00;
+  --color-aviso-suave: #fff7e0;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 30px;
+
+  --shadow-suave: 0 1px 2px rgb(16 20 24 / 0.05), 0 4px 14px rgb(16 20 24 / 0.06);
+  --shadow-media: 0 2px 5px rgb(16 20 24 / 0.07), 0 14px 32px rgb(16 20 24 / 0.11);
+  --shadow-forte: 0 4px 10px rgb(16 20 24 / 0.09), 0 24px 52px rgb(16 20 24 / 0.15);
+  --shadow-celular: 0 6px 16px rgb(0 0 0 / 0.4), 0 28px 64px rgb(0 0 0 / 0.55);
+  --shadow-noite: 0 2px 6px rgb(0 0 0 / 0.3), 0 10px 28px rgb(0 0 0 / 0.34);
+  --shadow-noite-forte: 0 4px 12px rgb(0 0 0 / 0.38), 0 20px 48px rgb(0 0 0 / 0.46);
+  --shadow-botao: 0 1px 2px rgb(10 94 102 / 0.2), 0 8px 20px rgb(10 94 102 / 0.22);
+
+  /* Tamanhos de texto que mudam com a largura da tela (clamp) */
+  --text-display: clamp(2.2rem, 1.4rem + 2.6vw, 3.5rem);
+  --text-display--line-height: 1.06;
+  --text-display--letter-spacing: -0.02em;
+  --text-h2: clamp(1.85rem, 1.35rem + 2vw, 2.85rem);
+  --text-h2--line-height: 1.12;
+  --text-h2--letter-spacing: -0.015em;
+  --text-h3: clamp(1.08rem, 1.02rem + 0.28vw, 1.25rem);
+  --text-h3--line-height: 1.25;
+  --text-lead: clamp(1.03rem, 0.99rem + 0.24vw, 1.1875rem);
+  --text-lead--line-height: 1.58;
+
+  --container-site: 75rem;
+  --container-leitura: 46rem;
+
+  --ease-saida: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-padrao: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Animação de entrada (veio da Sprint 3): o elemento sobe um pouco e sai do desfoque. */
+  --animate-focar: focar 760ms var(--ease-saida) backwards;
+  --animate-pulsar: pulsar 2.8s ease-in-out infinite;
+
+  @keyframes focar {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+      filter: blur(6px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+  }
+  @keyframes pulsar {
+    0%,
+    100% {
+      box-shadow: 0 0 0 3px rgb(34 211 238 / 0.16);
+    }
+    50% {
+      box-shadow: 0 0 0 6px rgb(34 211 238 / 0.05);
+    }
+  }
+}
+
+/* Largura máxima do conteúdo e margens laterais */
+@utility container-site {
+  width: 100%;
+  max-width: var(--container-site);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 0.8rem + 2vw, 2.5rem);
+}
+
+/* Espaço em cima e embaixo das seções da landing */
+@utility secao-y {
+  padding-block: clamp(3.75rem, 2rem + 7vw, 7.5rem);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.75rem;
+    -webkit-text-size-adjust: 100%;
+    scrollbar-color: #c3c6c2 var(--color-papel);
+    scrollbar-width: thin;
+  }
+
+  body {
+    background-color: var(--color-papel);
+    color: var(--color-tinta);
+    line-height: 1.58;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-titulo);
+    font-weight: 700;
+    font-stretch: 112.5%;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+
+  p {
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']),
+  summary {
+    cursor: pointer;
+  }
+
+  input,
+  textarea,
+  select {
+    caret-color: var(--color-acento);
+  }
+
+  ::placeholder {
+    color: var(--color-tinta-suave);
+    opacity: 1;
+  }
+
+  ::selection {
+    background: var(--color-acento);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-acento);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  /* Em áreas de fundo escuro (data-tom="escuro"), foco e seleção usam o ciano claro. */
+  [data-tom='escuro'] ::selection {
+    background: var(--color-acento-claro);
+    color: var(--color-noite);
+  }
+  [data-tom='escuro'] :focus-visible {
+    outline-color: var(--color-acento-claro);
+  }
+  [data-tom='escuro'] input,
+  [data-tom='escuro'] textarea {
+    caret-color: var(--color-acento-claro);
+  }
+  [data-tom='escuro'] ::placeholder {
+    color: var(--color-sobre-noite-fraca);
+  }
+
+  /* O <main> recebe foco pelo link "Pular para o conteúdo", mas sem contorno. */
+  main:focus {
+    outline: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-papel);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c3c6c2;
+    border: 3px solid var(--color-papel);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a8aca7;
+  }
+
+  dialog::backdrop {
+    background: rgb(6 8 11 / 0.82);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
