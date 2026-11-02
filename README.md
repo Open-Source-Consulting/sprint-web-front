@@ -61,13 +61,7 @@ O projeto não tem back-end próprio, então não há servidor para executar al�
 
 Não é preciso configurar nada. Para usar outro projeto do MockAPI, copie o `.env.example` para `.env` e troque o valor de `VITE_API_URL`.
 
-A API é pública: receitas, favoritos e notas são compartilhados por todos que usam o site. Para voltar ao catálogo original, rode:
-
-```bash
-npm run seed
-```
-
-Atenção: esse comando **apaga todos os registros** da API e cadastra de novo as receitas de `scripts/receitas.seed.json`.
+A API é pública: receitas, favoritos e notas são compartilhados por todos que usam o site.
 
 ## Usuário e senha para teste
 
